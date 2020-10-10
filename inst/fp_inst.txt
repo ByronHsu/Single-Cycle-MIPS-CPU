@@ -1,0 +1,23 @@
+00000000 //0x00/	nop
+08000006 //0x04/	j 0x18
+8C010000 //0x08/	end
+00000000 //0x0C/	nop
+00000000 //0x10/	nop
+00000000 //0x14/	nop
+200A0004 //0x18/  addi
+C54B001C //0x1C/  lwcl lw to fr11
+C40A0028 //0x20/  lwcl lw to fr10
+460A5840 //0x24/  add.s
+460A5801 //0x28/  sub.s
+460A5882 //0x2C/  mul.s
+460A58C3 //0x30/  div.s
+000A4100 //0x34/  sll
+E4000004 //0x38/  swcl
+E4010008 //0x3C/  swcl
+8C010000 //0x40/  lw
+C50CFFF0 //0x44/  lwcl
+460C5900 //0x48/  add.s
+E5420008 //0x4C/  swcl
+E503FFD0 //0x50/  swcl
+46002032 //0x54/  c.eq.s
+4501FFEB //0x58/  bclt

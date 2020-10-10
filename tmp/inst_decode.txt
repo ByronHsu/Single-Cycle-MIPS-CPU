@@ -1,0 +1,37 @@
+00000000 //0x00/	nop
+08000006 //0x04/	j 0x18 // J 0x0000006
+8C010000 //0x08/	end
+00000000 //0x0C/	nop
+00000000 //0x10/	nop
+00000000 //0x14/	nop
+200A0004 //0x18/  addi // ADDI $t2 $zero 0x0004
+200D000F //0x1C/  addi // ADDI $t5 $zero 0x000F
+0C000018 //0x20/  jal // JAL 0x0000018
+000D5880 //0x24/  sll // SLL $t3 $t5 0x10
+01606020 //0x28/  add // ADD $t4 $t3 $zero
+8D210000 //0x2C/  lw  // LW $at 0x0000 $t1
+8D220004 //0x30/  lw  // LW $v0 0x0004 $t1
+0041282A //0x34/  slt // SLT $a1 $v0 $at
+10A00002 //0x38/  beq // BEQ $a1 $zero 0x0002
+AD220000 //0x3C/  sw // SW $v0 0x0000 $t1
+AD210004 //0x40/  sw // SW $at 0x0004 $t1
+012A4820 //0x44/  add // ADD $t1 $t1 $t2
+1589FFF8 //0x48/  bne // BNE $t4 $t1 0xFFF8
+018A6022 //0x4C/  sub // SUB $t4 $t4 $t2
+000A4820 //0x50/  add // ADD $t1 $zero $t2
+158AFFF5 //0x54/  bne // BNE $t4 $t2 0xFFF5
+0C00001A //0x58/  jal // JAL 0x000001A
+08000002 //0x5C/  j // J 0x0000002
+000A4820 //0x60/  add // ADD $t1 $zero $t2
+03E00008 //0x64/  jr // JR $ra
+8D300008 //0x68/  lw // LW $s0 0x0008 $t1
+8D310030 //0x6C/  lw // LW $s1 0x0030 $t1
+02111824 //0x70/  and // AND $v1 $s0 $s1
+AD630004 //0x74/  sw // SW $v1 0x0004 $t3
+02112025 //0x78/  or // OR $a0 $s0 $s1
+AD64000C //0x7C/  sw // SW $a0 0x000C $t3
+00031882 //0x80/  srl // SRL $v1 $v1 0x0undefined
+AD630008 //0x84/  sw // SW $v1 0x0008 $t3
+000310C2 //0x88/  srl // SRL $v0 $v1 0x0undefined
+AD620010 //0x8C/  sw // SW $v0 0x0010 $t3
+03E00008 //0x88/  jr //JR $ra
